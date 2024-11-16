@@ -1,0 +1,10 @@
+import os
+import pandas as pd
+
+dat_file_path = '/Users/danielsinausia/Downloads/Vul_elec_CV-0.5V_sam_matrix_Both.dat'
+directory = os.path.dirname(dat_file_path)
+delimiter = '\t'
+df = pd.read_csv(dat_file_path, delimiter=delimiter)
+csv_file_path = os.path.join(directory, 'csv.csv')
+
+df.to_csv(csv_file_path, index=False)
